@@ -1,0 +1,22 @@
+.nav-secundario {
+    width: 10%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+}
+
+.image{
+    background-image:url('../recursos/ImagemNav.png');
+    height: 23px;
+    width: 30px;
+}
+
+.nav-color{
+    background-color: #5FA1D8;
+}
+
+.nav-sec-color{
+    background-color: #FFFFFF
+}
+

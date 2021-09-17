@@ -1,0 +1,20 @@
+<div class="margin" >
+  <h3>{{titulo}}</h3>
+  <hr>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col ">Quantidade de Assentos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sala of salas">
+        <td>sala.Nome</td>
+        <td style="width: 30%">sala.QtdAssentos</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>

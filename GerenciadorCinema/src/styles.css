@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.margin{
+    margin-left: 15%;
+    margin-right: 10%
+}
+
+.word-color{
+    color: #86AAC8
+}
+
+body {
+    background-color: #F3F3F3;
+}
+
+.image-remove{
+    background-image: url("../src/app/recursos/Excluir.png");
+    height: 30px;
+    width: 30px;
+}
+
+.image-edit{
+    background-image: url("../src/app/recursos/Editar.png");
+    height: 30px;
+    width: 30px;
+}
+
+.image-add{
+    background-image: url("../src/app/recursos/Adicionar.png");
+    height: 30px;
+    width: 30px;
+}

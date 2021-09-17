@@ -1,0 +1,67 @@
+<div class="margin">
+  <h3>{{titulo}}</h3>
+  <hr>
+  <div *ngIf="!filmeSelecionado && !adicionar">
+    <form class="row g-3">
+      <div class="col-auto">
+        <button class="btn image-add" (click)="adicionarFilme(true)"></button>
+      </div>
+      <div class="col-auto end">
+        <input type="text" > <!--[(ngModel)]="filtro"-->
+      </div>
+    </form>
+    <br>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Título</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Duração</th>
+          <th scope="col">Operações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let filme of filmes">
+          <td>{{filme.titulo}}</td>
+          <td>{{filme.descricao}}</td>
+          <td>{{filme.duracao}}</td>
+          <td>
+            <button class="btn image-edit" (click)="filmeSelecionar(filme)"></button>
+            <button class="btn image-remove"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="filmeSelecionado || adicionar">
+    <form [formGroup]="filmeForm" (submit)="filmeSubmit()">
+      <div class="form-group" *ngIf="filmeSelecionado == null">
+        <button class="btn btn-outline-dark add-imagem"> Adicionar Imagem</button>
+      </div>
+      <div class="form-group" *ngIf="filmeSelecionado != null">
+        <button class="btn btn-outline-dark add-imagem" > Adicionar Imagem</button>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExempleInput" class="form-label">Título</label>
+        <input class="form-control" value="{{filmeSelecionado.titulo}}" formControlName="titulo">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExempleInput" class="form-label">Descrição</label>
+        <input class="form-control" value="{{filmeSelecionado.descricao}}" formControlName="descricao">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExempleInput" class="form-label">Duração</label>
+        <input class="form-control" style="width: 13%" value="{{filmeSelecionado.duracao}}" formControlName="duracao">
+      </div>
+      <br>
+      <form class="row g-3 end-btn">
+        <div class="col-auto">
+          <button class="btn btn-outline-primary" (click)="voltar()">Voltar</button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-outline-primary" [disabled]="!filmeForm.valid">Salvar</button>
+        </div>
+      </form>
+    </form>
+  </div>
+</div>
